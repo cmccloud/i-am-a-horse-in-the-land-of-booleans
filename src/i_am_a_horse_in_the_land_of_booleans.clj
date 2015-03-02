@@ -15,7 +15,7 @@
   (if (< n 0) (- n) n))
 
 (defn divides?
-  "Returns true if the divsior divides n."
+  "Returns true if the divsior evenly divides n."
   [divisor n]
   (if (= (mod n divisor) 0)
     true
@@ -48,7 +48,7 @@
         :else true))
 
 (defn leap-year?
-  "Returns true if year is divisible by 4, or divisible by both 100 and 400"
+  "Returns true is year is divisible by both 100 and 400, or if year is divisible by 4 but not by 100"
   [year]
   (if (divides? 100 year)
     (divides? 400 year)
